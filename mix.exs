@@ -6,7 +6,7 @@ defmodule Clashgarage.MixProject do
   def project do
     [
       app: :clashgarage,
-      description: "A parking lot for some stuff around the SC APis",
+      description: "A parking lot for some stuff around the SC APis, designed like a CLI",
       version: "1.0.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
@@ -25,7 +25,7 @@ defmodule Clashgarage.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.8"},
-      {:poison, "~> 5.0"},
+      {:jason, "~> 1.4"},
       {:dotenv_parser, "~> 2.0"},
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"}

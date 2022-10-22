@@ -3,17 +3,11 @@ defmodule Clashgarage.Repo.Migrations.Accounts do
 
   def change do
     create table(:clash_of_clans) do
-      add :name, :string
+      add :accountname, :string
       add :tag, :string
       add :townhall, :integer
       timestamps()
     end
-
-    create table(:clash_royale) do
-      add :name, :string
-      add :tag, :string
-      add :arena, :integer
-      timestamps()
-    end
+    create unique_index("clash_of_clans", [:tag])
   end
 end
