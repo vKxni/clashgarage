@@ -10,10 +10,13 @@ defmodule Clashgarage.ClashAccounts do
     timestamps()
   end
 
-  def changeset(clash_of_clans, attrs) do
-    clash_of_clans
+  def changeset(clash_accounts, attrs) do
+    clash_accounts
     |> cast(attrs, [:accountname, :tag, :townhall])
-    |> validate_required([:accountname, :tag])
-    |> unique_constraint(:name, name: :clash_of_clans_tag_index, message: "Tag already saved!")
+    |> validate_required([:accountname, :tag, :townhall])
+    |> unique_constraint(:tag,
+      name: :users_account_tag_index,
+      message: "USER_EXISTS_WITH_SAME_TAG"
+    )
   end
 end
